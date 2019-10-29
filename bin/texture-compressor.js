@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 
-require('../dist/cli/index.js').pack();
+require('../dist/cli/lib/index.js').pack();
