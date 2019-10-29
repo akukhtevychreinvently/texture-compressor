@@ -2,7 +2,7 @@
   "name": "texture-compressor",
   "version": "1.0.1",
   "description": "CLI tool for texture compression using ETC, PVRTC in a KTX, PVR containers.",
-  "main": "dist/cli/lib/index.js",
+  "main": "dist/cli/index.js",
   "scripts": {
     "start": "tsc -w",
     "lint": "tslint --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
