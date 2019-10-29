@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/texture-compressor.svg)](https://badge.fury.io/js/texture-compressor)
 
-CLI tool for texture compression using ASTC, ETC, PVRTC and S3TC in a KTX container.
+CLI tool for texture compression using ETC, PVRTC in a KTX container.
 
 ## Installation
 
@@ -26,12 +26,6 @@ Make sure you have [Node.js](http://nodejs.org/) installed.
 
 ## CLI Usage
 
-### ASTC
-
-```sh
-$ node ./bin/texture-compressor -i input/example.png -t astc -c ASTC_4x4 -q astcmedium -o output/example-astc.ktx -y -m -vb
-```
-
 ### ETC
 
 ```sh
@@ -42,12 +36,6 @@ $ node ./bin/texture-compressor -i input/example.png -t etc -c ETC2_RGB -q etcfa
 
 ```sh
 $ node ./bin/texture-compressor -i input/example.png -t pvrtc -c PVRTC1_2 -q pvrtcnormal -o output/example-pvrtc.ktx -y -m -vb
-```
-
-### S3TC
-
-```sh
-$ node ./bin/texture-compressor -i input/example.png -t s3tc -c DXT1 -q normal -o output/example-s3tc.ktx -y -m -vb
 ```
 
 ## Module usage
@@ -88,13 +76,13 @@ pack({
 
 Tool flags are not processed by `texture-compressor` but rather directly by the binary you are targeting itself.
 
-For example adding `--flags ["usesourceformat DXT1A" "alphaThreshold 200"]` will pass `usesourceformat DXT1A` and `alphaThreshold 200` directly to `Crunch`.
+* "Only as example crunch is not supported in this fork" For example adding `--flags ["usesourceformat DXT1A" "alphaThreshold 200"]` will pass `usesourceformat DXT1A` and `alphaThreshold 200` directly to `Crunch`.
 
 Please be aware that these flags are tool specific and can therefore not be directly applied to the other binaries.
 
     -f, --flags ["flag value" "flag value"] [not required]
 
-To find tool specific flags please refer to the manuals of [ASTC](http://cdn.imgtec.com/sdk-documentation/PVRTexTool.User+Manual.pdf), [ETC](http://cdn.imgtec.com/sdk-documentation/PVRTexTool.User+Manual.pdf), [PVRTC](http://cdn.imgtec.com/sdk-documentation/PVRTexTool.User+Manual.pdf), [S3TC](https://github.com/BinomialLLC/crunch/blob/235946f7a1cf8b9c97e8bf0e8062d5439a51dec7/crunch/crunch.cpp#L70-L181).
+To find tool specific flags please refer to the manuals of [ASTC](http://cdn.imgtec.com/sdk-documentation/PVRTexTool.User+Manual.pdf), [ETC](http://cdn.imgtec.com/sdk-documentation/PVRTexTool.User+Manual.pdf), [PVRTC](http://cdn.imgtec.com/sdk-documentation/PVRTexTool.User+Manual.pdf).
 
 ## License
 
@@ -103,6 +91,4 @@ My work is released under the [MIT license](https://raw.githubusercontent.com/Ti
 This repository distributes multiple binary tools for Windows, Mac and Linux.
 This product includes components of the PowerVR™ SDK from Imagination Technologies Limited.
 
-- [astcenc](https://raw.githubusercontent.com/ARM-software/astc-encoder/master/license.txt)
 - [PVRTexToolCLI](https://community.imgtec.com/developers/powervr/sdk-end-user-licence-agreement/)
-- [crunch](https://raw.githubusercontent.com/BinomialLLC/crunch/master/license.txt)

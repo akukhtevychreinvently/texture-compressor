@@ -7,11 +7,6 @@ import { validateArgs } from './validateArgs';
 
 // Constants
 import {
-  ASTC,
-  ASTC_COMPRESSION_TYPES,
-  ASTC_QUALITY_TYPES,
-  ASTC_SUPPORTED_INPUT_TYPES,
-  ASTC_SUPPORTED_OUTPUT_TYPES,
   ETC,
   ETC_COMPRESSION_TYPES,
   ETC_QUALITY_TYPES,
@@ -28,18 +23,10 @@ import {
 import { getImageSize, getMipChainLevels } from '../utilities';
 
 /**
- * Compress texture with the ASTC, ETC or PVRTC compression format
+ * Compress texture with the ETC or PVRTC compression format
  */
 export const compressWithPVRTexTool = (args: ICLIArgs): Promise<any> => {
-  if (args.type === ASTC) {
-    validateArgs(
-      args,
-      ASTC_SUPPORTED_INPUT_TYPES,
-      ASTC_SUPPORTED_OUTPUT_TYPES,
-      ASTC_COMPRESSION_TYPES,
-      ASTC_QUALITY_TYPES
-    );
-  } else if (args.type === ETC) {
+  if (args.type === ETC) {
     validateArgs(
       args,
       ETC_SUPPORTED_INPUT_TYPES,

@@ -6,19 +6,13 @@ import * as pkg from '../package.json';
 
 // Constants
 import {
-  ASTC_COMPRESSION_TYPES,
-  ASTC_QUALITY_TYPES,
   COMPRESSION_FORMAT_FLAGS,
   ETC_COMPRESSION_TYPES,
   ETC_QUALITY_TYPES,
-  IS_ASTC,
   IS_ETC,
   IS_PVRTC,
-  IS_S3TC,
   PVRTC_COMPRESSION_TYPES,
   PVRTC_QUALITY_TYPES,
-  S3TC_COMPRESSION_TYPES,
-  S3TC_QUALITY_TYPES,
 } from './constants';
 
 /**
@@ -53,10 +47,8 @@ const createParserArguments = (): ICLIArgs => {
   // Compression internal format flag
   parser.addArgument(['-c', '--compression'], {
     choices: [
-      ...(IS_ASTC ? ASTC_COMPRESSION_TYPES : []),
       ...(IS_ETC ? ETC_COMPRESSION_TYPES : []),
       ...(IS_PVRTC ? PVRTC_COMPRESSION_TYPES : []),
-      ...(IS_S3TC ? S3TC_COMPRESSION_TYPES : []),
     ],
     help: 'Compression internal format',
     required: true,
@@ -65,10 +57,8 @@ const createParserArguments = (): ICLIArgs => {
   // Quality flag
   parser.addArgument(['-q', '--quality'], {
     choices: [
-      ...(IS_ASTC ? ASTC_QUALITY_TYPES : []),
       ...(IS_ETC ? ETC_QUALITY_TYPES : []),
       ...(IS_PVRTC ? PVRTC_QUALITY_TYPES : []),
-      ...(IS_S3TC ? S3TC_QUALITY_TYPES : []),
     ],
     help: 'Quality type',
     required: true,

@@ -9,7 +9,7 @@ import { ICLIArgs } from '../argsHandler';
 import { createFlagsForTool, getBinaryDirectory, splitFlagAndValue } from '../utilities';
 
 /**
- * Spawn a child process of a texture compression tool (e.g. PVRTexTool, Crunch)
+ * Spawn a child process of a texture compression tool (e.g. PVRTexTool)
  *
  * @param args Command line arguments
  * @param flagMapping Flags to pass to the texture compression tool

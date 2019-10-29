@@ -2,7 +2,6 @@
 import { ICLIArgs } from './argsHandler';
 
 // Compressors
-import { compressWithCrunch } from './compressors/compressWithCrunch';
 import { compressWithPVRTexTool } from './compressors/compressWithPVRTexTool';
 
 // Constants
@@ -25,12 +24,9 @@ export const pack = (CLIArgs?: ICLIArgs): Promise<any> => {
   }
 
   switch (args.type) {
-    case 'astc':
     case 'etc':
     case 'pvrtc':
       return compressWithPVRTexTool(args);
-    case 's3tc':
-      return compressWithCrunch(args);
     default:
       throw new Error(`Compression format: ${args.type} was not recognized`);
   }
