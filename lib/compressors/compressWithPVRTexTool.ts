@@ -61,6 +61,7 @@ export const compressWithPVRTexTool = (args: ICLIArgs): Promise<any> => {
     flagMapping.push('-square', args.square || '+');
   }
 
+
   if (args.pot !== 'no') {
     flagMapping.push('-pot', args.pot || '+');
   }
