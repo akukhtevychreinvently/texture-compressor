@@ -1,5 +1,5 @@
 {
-  "name": "texture-compressor",
+  "name": "texture-compressor-optimized",
   "version": "1.0.1.1",
   "description": "CLI tool for texture compression using ETC, PVRTC in a KTX, PVR containers.",
   "main": "dist/cli/lib/index.js",
@@ -10,7 +10,7 @@
     "build": "tsc"
   },
   "bin": {
-    "texture-compressor": "./bin/texture-compressor.js"
+    "texture-compressor-optimized": "./bin/texture-compressor.js"
   },
   "author": "Tim van Scherpenzeel",
   "license": "MIT",
